@@ -1,0 +1,2 @@
+PaymentID,InvoiceNo,CustomerID,Amount,Method,Status,Date
+PAY001,INV001,C001,225000,UPI,Completed,2023-10-26

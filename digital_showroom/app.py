@@ -1,0 +1,58 @@
+import streamlit as st
+# Force streamlit to reload again 28
+
+# Set page config for a premium, wide look
+st.set_page_config(
+    page_title="Royal Enfield | Official Website",
+    page_icon="🏍️",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
+# --- Custom CSS for Premium Look ---
+# We inject minimal CSS to hide the Streamlit header and adjust padding for a website feel
+st.markdown("""
+    <style>
+        #MainMenu {visibility: hidden;}
+        header {visibility: hidden;}
+        footer {visibility: hidden;}
+        .block-container {
+            padding-top: 0rem;
+            padding-bottom: 0rem;
+            max-width: 100%;
+        }
+        .hero-text {
+            text-align: center;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        .model-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .model-desc {
+            text-align: center;
+            color: #ccc;
+            font-size: 16px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Important: We import components after styling so they inherit the classes
+from components.navbar import render_navbar
+from components.hero import render_hero_section
+from components.showcase import render_showcase
+from components.locations import render_locations
+from components.booking_form import render_booking_form
+from components.footer import render_footer
+
+# --- Build the Page ---
+render_navbar()
+render_hero_section()
+render_showcase()
+render_locations()
+render_booking_form()
+render_footer()
+
+# Force streamlit to reload again 6
