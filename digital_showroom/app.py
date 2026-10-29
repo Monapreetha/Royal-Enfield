@@ -1,5 +1,12 @@
 import streamlit as st
-# Force streamlit to reload again 28
+import os
+import sys
+
+# Ensure current working directory is digital_showroom directory
+SHOWROOM_DIR = os.path.dirname(os.path.abspath(__file__))
+os.chdir(SHOWROOM_DIR)
+if SHOWROOM_DIR not in sys.path:
+    sys.path.insert(0, SHOWROOM_DIR)
 
 # Set page config for a premium, wide look
 st.set_page_config(
@@ -55,4 +62,4 @@ render_locations()
 render_booking_form()
 render_footer()
 
-# Force streamlit to reload again 6
+# Force streamlit to reload again 8

@@ -2,7 +2,7 @@ import streamlit as st
 
 def render_showcase():
     """Renders the complete motorcycle gallery showcase categorized by tabs."""
-    st.markdown("<h2 class='hero-text'>THE MOTORCYCLES</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 class='hero-text' id='the-motorcycles'>THE MOTORCYCLES</h2>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
     # Organized categories
