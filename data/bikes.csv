@@ -1,7 +1,0 @@
-BikeID,Model,EngineCC,Color,Price,Quantity,Features
-B001,Classic 350,349cc,Halcyon Black,193000,10,"Dual Channel ABS, Alloy Wheels"
-B002,Hunter 350,349cc,Rebel Blue,170000,15,"Tripper Navigation, Alloy Wheels"
-B003,Bullet 350,349cc,Standard Black,175000,5,"Single Channel ABS, Spoke Wheels"
-B004,Meteor 350,349cc,Fireball Red,205000,8,"Tripper Navigation, Windshield"
-B005,Interceptor 650,648cc,Canyon Red,303000,3,"Dual Channel ABS, Slipper Clutch"
-B006,Continental GT 650,648cc,Mr Clean,319000,2,"Clip-on Handlebars, Cafe Racer Design"

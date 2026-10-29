@@ -1,24 +1,65 @@
 import streamlit as st
+import os
+import sys
 
+# Ensure current working directory is digital_showroom directory
+SHOWROOM_DIR = os.path.dirname(os.path.abspath(__file__))
+os.chdir(SHOWROOM_DIR)
+if SHOWROOM_DIR not in sys.path:
+    sys.path.insert(0, SHOWROOM_DIR)
+
+# Set page config for a premium, wide look
 st.set_page_config(
-    page_title="Royal Enfield Dealership Management",
+    page_title="Royal Enfield | Official Website",
     page_icon="🏍️",
     layout="wide",
+    initial_sidebar_state="collapsed"
 )
 
-st.title("🏍️ Royal Enfield Dealership Management System")
+# --- Custom CSS for Premium Look ---
+# We inject minimal CSS to hide the Streamlit header and adjust padding for a website feel
 st.markdown("""
-Welcome to the modernized Dealership Management System! 
+    <style>
+        #MainMenu {visibility: hidden;}
+        header {visibility: hidden;}
+        footer {visibility: hidden;}
+        .block-container {
+            padding-top: 0rem;
+            padding-bottom: 0rem;
+            max-width: 100%;
+        }
+        .hero-text {
+            text-align: center;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        .model-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .model-desc {
+            text-align: center;
+            color: #ccc;
+            font-size: 16px;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-Navigate through the pages on the left sidebar to manage:
-- **Dashboard**: Quick overview of metrics
-- **Customer Management**: Register and view customers
-- **Bike Management**: Inventory and models
-- **Test Ride Booking**: Schedule rides
-- **Bike Purchase & Billing**: Generate bills
-- **Payment & Delivery**: Track orders
-- **Customer Feedback**: Gather ratings
-- **Data Analysis**: Visual insights
+# Important: We import components after styling so they inherit the classes
+from components.navbar import render_navbar
+from components.hero import render_hero_section
+from components.showcase import render_showcase
+from components.locations import render_locations
+from components.booking_form import render_booking_form
+from components.footer import render_footer
 
-*This system is built with modularity and SOLID principles in mind.*
-""")
+# --- Build the Page ---
+render_navbar()
+render_hero_section()
+render_showcase()
+render_locations()
+render_booking_form()
+render_footer()
+
+# Force streamlit to reload again 8

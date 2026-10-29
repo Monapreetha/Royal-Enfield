@@ -1,3 +1,0 @@
-"""
-Services directory for business logic layer.
-"""
