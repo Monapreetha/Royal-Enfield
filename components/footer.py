@@ -156,30 +156,27 @@ def show_cookie_policy():
         st.rerun()
 
 def render_footer():
-    """Renders the website footer with contact info and interactive quick links."""
-    st.markdown("---")
+    """Renders the sleek, compact website footer with social channels and legal links."""
+    divider_html = """
+<div style="border-top: 1px solid #2a2a2a; margin-top: 10px; margin-bottom: 18px;"></div>
+"""
+    st.markdown("\n".join(l.strip() for l in divider_html.splitlines() if l.strip()), unsafe_allow_html=True)
     
     # CSS styling for footer buttons and interactive legal links
     css_html = """
 <style>
-/* Quick action centered buttons */
-div[data-testid="stButton"] button[kind="secondary"],
-div[data-testid="stButton"] button[kind="primary"] {
-    text-align: center !important;
-}
-
-/* Sleek styling for footer tertiary links */
+/* Compact footer styling */
 button[data-testid="baseButton-tertiary"],
 div[data-testid="stButton"] button[kind="tertiary"] {
     text-align: left !important;
     justify-content: flex-start !important;
-    padding: 3px 0px !important;
+    padding: 2px 0px !important;
     margin: 0px !important;
     height: auto !important;
     min-height: unset !important;
-    color: #b0b0b0 !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
+    color: #999999 !important;
+    font-size: 12.5px !important;
+    font-weight: 500 !important;
     border: none !important;
     background: transparent !important;
     box-shadow: none !important;
@@ -191,37 +188,58 @@ div[data-testid="stButton"] button[kind="tertiary"]:hover {
     color: #e53935 !important;
     text-decoration: underline !important;
     background: transparent !important;
-    transform: translateX(4px);
+    transform: translateX(3px);
 }
 </style>
 """
     clean_css = "\n".join(l.strip() for l in css_html.splitlines() if l.strip())
     st.markdown(clean_css, unsafe_allow_html=True)
 
-    # --- MAIN FOOTER ---
-    col1, col2 = st.columns(2)
+    # Centered compact 2 columns with reduced space between them
+    _, col_follow, col_legal, _ = st.columns([1, 2.2, 2.2, 1], gap="medium")
     
-    with col1:
-        st.markdown("#### Follow Us")
-        st.markdown("""
-        [📘 Facebook](https://www.facebook.com/RoyalEnfield)  
-        [📸 Instagram](https://www.instagram.com/royalenfield/)  
-        [🐦 Twitter / X](https://twitter.com/royalenfield)  
-        [▶️ YouTube](https://www.youtube.com/user/RoyalEnfield)
-        """)
+    with col_follow:
+        follow_html = """
+<div style="margin-bottom: 6px;">
+<h5 style="color: #ffffff; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 10px 0; font-weight: 700;">
+Follow Us
+</h5>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+<a href="https://www.facebook.com/RoyalEnfield" target="_blank" style="color: #aaa; text-decoration: none; font-size: 12.5px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">📘 Facebook</a>
+<a href="https://www.instagram.com/royalenfield/" target="_blank" style="color: #aaa; text-decoration: none; font-size: 12.5px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">📸 Instagram</a>
+<a href="https://twitter.com/royalenfield" target="_blank" style="color: #aaa; text-decoration: none; font-size: 12.5px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">🐦 Twitter / X</a>
+<a href="https://www.youtube.com/user/RoyalEnfield" target="_blank" style="color: #aaa; text-decoration: none; font-size: 12.5px; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">▶️ YouTube</a>
+</div>
+</div>
+"""
+        st.markdown("\n".join(l.strip() for l in follow_html.splitlines() if l.strip()), unsafe_allow_html=True)
         
-    with col2:
-        st.markdown("#### Legal & Compliance")
-        if st.button("🔒 Privacy Policy", key="legal_privacy_btn", type="tertiary"):
-            show_privacy_policy()
-        if st.button("📜 Terms & Conditions", key="legal_terms_btn", type="tertiary"):
-            show_terms_and_conditions()
-        if st.button("⚠️ Disclaimer", key="legal_disclaimer_btn", type="tertiary"):
-            show_disclaimer()
-        if st.button("🍪 Cookie Policy", key="legal_cookies_btn", type="tertiary"):
-            show_cookie_policy()
+    with col_legal:
+        legal_heading = """
+<h5 style="color: #ffffff; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 8px 0; font-weight: 700;">
+Legal & Compliance
+</h5>
+"""
+        st.markdown("\n".join(l.strip() for l in legal_heading.splitlines() if l.strip()), unsafe_allow_html=True)
         
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<div style='text-align: center; color: #666; font-size: 12px;'>© 2026 Royal Enfield (A Unit of Eicher Motors Ltd.). All Rights Reserved.</div>", unsafe_allow_html=True)
+        c_leg1, c_leg2 = st.columns(2)
+        with c_leg1:
+            if st.button("🔒 Privacy Policy", key="legal_privacy_btn", type="tertiary"):
+                show_privacy_policy()
+            if st.button("📜 Terms & Conditions", key="legal_terms_btn", type="tertiary"):
+                show_terms_and_conditions()
+        with c_leg2:
+            if st.button("⚠️ Disclaimer", key="legal_disclaimer_btn", type="tertiary"):
+                show_disclaimer()
+            if st.button("🍪 Cookie Policy", key="legal_cookies_btn", type="tertiary"):
+                show_cookie_policy()
+        
+    copyright_html = """
+<div style="text-align: center; color: #555555; font-size: 11.5px; margin-top: 15px; padding-top: 10px; border-top: 1px solid #1a1a1a;">
+© 2026 Royal Enfield (A Unit of Eicher Motors Ltd.). All Rights Reserved.
+</div>
+"""
+    st.markdown("\n".join(l.strip() for l in copyright_html.splitlines() if l.strip()), unsafe_allow_html=True)
+
 
 

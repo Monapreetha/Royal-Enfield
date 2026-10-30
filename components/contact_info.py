@@ -112,4 +112,4 @@ Leave your details below and our regional customer care executive will connect w
                 else:
                     st.error(message)
 
-    st.markdown("<br><hr style='border-color: #333;'>", unsafe_allow_html=True)
+    st.markdown("<div style='margin-bottom: 10px;'></div>", unsafe_allow_html=True)
