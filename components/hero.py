@@ -126,53 +126,9 @@ def render_hero_section():
             font-size: 16px;
             line-height: 1.5;
             color: #e0e0e0;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             text-shadow: 0 2px 8px rgba(0,0,0,0.9);
             font-weight: 400;
-        }}
-        .slide-cta {{
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }}
-        .btn-primary {{
-            background: #cc0000;
-            color: #ffffff;
-            padding: 11px 22px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 15px rgba(204,0,0,0.4);
-            display: inline-block;
-        }}
-        .btn-primary:hover {{
-            background: #e60000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(204,0,0,0.6);
-        }}
-        .btn-secondary {{
-            background: rgba(255,255,255,0.14);
-            color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.35);
-            padding: 11px 20px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            backdrop-filter: blur(8px);
-            transition: all 0.25s ease;
-            display: inline-block;
-        }}
-        .btn-secondary:hover {{
-            background: rgba(255,255,255,0.25);
-            border-color: #ffffff;
-            transform: translateY(-2px);
         }}
         /* Overlaid navigation arrows inside picture */
         .slider-arrow {{
@@ -243,10 +199,6 @@ def render_hero_section():
                     <div class="slide-badge">ESTD. 1901 • CLASSIC 350</div>
                     <h1 class="slide-title">URBAN HERITAGE</h1>
                     <p class="slide-subtitle">Timeless craftsmanship and unwavering character rooted in over a century of pure mechanical pedigree.</p>
-                    <div class="slide-cta">
-                        <a href="#experience-the-ride" target="_parent" class="btn-primary">Book Test Ride</a>
-                        <a href="#the-motorcycles" target="_parent" class="btn-secondary">Explore Lineup</a>
-                    </div>
                 </div>
             </div>
 
@@ -258,10 +210,6 @@ def render_hero_section():
                     <div class="slide-badge">EXPEDITION READY • ALL-NEW HIMALAYAN</div>
                     <h1 class="slide-title">HIMALAYAN EXPEDITION</h1>
                     <p class="slide-subtitle">Built for all roads, and no roads. Conquer extreme altitudes, rugged gravel passes, and uncharted terrain.</p>
-                    <div class="slide-cta">
-                        <a href="#experience-the-ride" target="_parent" class="btn-primary">Book Test Ride</a>
-                        <a href="#the-motorcycles" target="_parent" class="btn-secondary">Explore Lineup</a>
-                    </div>
                 </div>
             </div>
 
@@ -273,10 +221,6 @@ def render_hero_section():
                     <div class="slide-badge">HIGHWAY CRUISER • SUPER METEOR 650</div>
                     <h1 class="slide-title">COASTAL CRUISER</h1>
                     <p class="slide-subtitle">Effortless open highway cruising, relaxed ergonomics, and majestic low-slung cruiser stance at golden hour.</p>
-                    <div class="slide-cta">
-                        <a href="#experience-the-ride" target="_parent" class="btn-primary">Book Test Ride</a>
-                        <a href="#the-motorcycles" target="_parent" class="btn-secondary">Explore Lineup</a>
-                    </div>
                 </div>
             </div>
 
@@ -288,10 +232,6 @@ def render_hero_section():
                     <div class="slide-badge">AUTHENTIC CAFE RACER • CONTINENTAL GT 650</div>
                     <h1 class="slide-title">CAFE RACER CIRCUIT</h1>
                     <p class="slide-subtitle">Clip-on handlebars, sculpted cafe racer fuel tank, and raw British twin-cylinder racing character.</p>
-                    <div class="slide-cta">
-                        <a href="#experience-the-ride" target="_parent" class="btn-primary">Book Test Ride</a>
-                        <a href="#the-motorcycles" target="_parent" class="btn-secondary">Explore Lineup</a>
-                    </div>
                 </div>
             </div>
         </div>
