@@ -3,18 +3,20 @@ from services.public_booking_service import PublicBookingService
 
 def render_booking_form():
     """Renders the form to book a test ride."""
-    st.markdown("""
-    <div id="experience-the-ride"></div>
-    <div id="book-test-ride"></div>
-    <div style="text-align: center; margin-top: 15px; margin-bottom: 25px;">
-        <h2 class="hero-text" style="font-size: 32px; font-weight: 900; letter-spacing: 2px; color: #ffffff; margin-bottom: 8px;">
-            EXPERIENCE THE RIDE
-        </h2>
-        <p style="color: #a0a0a0; font-size: 16px; max-width: 700px; margin: 0 auto; line-height: 1.5;">
-            Nothing compares to the roar of a Royal Enfield engine on the open road. Reserve your complimentary priority test ride at your preferred authorized dealership.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    header_html = """
+<div id="experience-the-ride"></div>
+<div id="book-test-ride"></div>
+<div style="text-align: center; margin-top: 15px; margin-bottom: 25px;">
+<h2 class="hero-text" style="font-size: 32px; font-weight: 900; letter-spacing: 2px; color: #ffffff; margin-bottom: 8px;">
+EXPERIENCE THE RIDE
+</h2>
+<p style="color: #a0a0a0; font-size: 16px; max-width: 700px; margin: 0 auto; line-height: 1.5;">
+Nothing compares to the roar of a Royal Enfield engine on the open road. Reserve your complimentary priority test ride at your preferred authorized dealership.
+</p>
+</div>
+"""
+    st.markdown("\n".join(l.strip() for l in header_html.splitlines() if l.strip()), unsafe_allow_html=True)
+
 
     col_form1, col_form2, col_form3 = st.columns([1, 2, 1])
 
@@ -72,15 +74,17 @@ def render_booking_form():
                 
                 if success:
                     st.success(message)
-                    st.markdown(f"""
-                    <div style="background: rgba(30, 45, 30, 0.7); border: 1px solid #2e7d32; border-radius: 6px; padding: 14px 18px; margin-top: 10px;">
-                        <strong style="color: #81c784;">✓ All set for your test ride!</strong>
-                        <p style="color: #c8e6c9; font-size: 13px; margin: 4px 0 0 0;">
-                            A confirmation SMS has been dispatched. Please remember to carry your <strong>Valid Two-Wheeler Driving License</strong> and a <strong>DOT/ISI-certified helmet</strong> to {dealership}.
-                        </p>
-                    </div>
-                    """, unsafe_allow_html=True)
+                    confirm_box = f"""
+<div style="background: rgba(30, 45, 30, 0.7); border: 1px solid #2e7d32; border-radius: 6px; padding: 14px 18px; margin-top: 10px;">
+<strong style="color: #81c784;">✓ All set for your test ride!</strong>
+<p style="color: #c8e6c9; font-size: 13px; margin: 4px 0 0 0;">
+A confirmation SMS has been dispatched. Please remember to carry your <strong>Valid Two-Wheeler Driving License</strong> and a <strong>DOT/ISI-certified helmet</strong> to {dealership}.
+</p>
+</div>
+"""
+                    st.markdown("\n".join(l.strip() for l in confirm_box.splitlines() if l.strip()), unsafe_allow_html=True)
                 else:
                     st.error(message)
 
     st.markdown("<br><hr style='border-color: #333;'>", unsafe_allow_html=True)
+
