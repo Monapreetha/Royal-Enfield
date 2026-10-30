@@ -196,39 +196,24 @@ def render_footer():
         </style>
     """, unsafe_allow_html=True)
 
-    # --- QUICK LINKS ABOVE FOOTER ---
-    st.markdown("<h3 style='text-align:center;' id='ownership-services'>QUICK ACTIONS & SERVICES</h3><br>", unsafe_allow_html=True)
-    q1, q2, q3 = st.columns(3)
-    
-    with q1:
-        if st.button("🔧 Book a Service", use_container_width=True):
-            show_book_service()
-    with q2:
-        if st.button("📖 Owner's Manual", use_container_width=True):
-            show_owners_manual()
-    with q3:
-        if st.button("⚙️ Make it Yours", use_container_width=True):
-            show_make_it_yours()
-            
-    st.markdown("<br><hr>", unsafe_allow_html=True)
-
     # --- MAIN FOOTER ---
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.markdown("#### Ownership & Services")
+        st.markdown("#### Royal Enfield")
         st.markdown("""
-        - **Scheduled Maintenance:** Factory-trained technicians using genuine parts.
-        - **Genuine Accessories:** Customize your ride with our official catalog.
-        - **Roadside Assistance:** 24/7 support anywhere in the country.
+        *Since 1901 — Made Like a Gun, Goes Like a Bullet.*  
+        The oldest motorcycle brand in continuous production, inspiring generations of riders across the globe.
         """)
         
     with col2:
-        st.markdown("<h4 id='contact-us'>For Further Queries</h4>", unsafe_allow_html=True)
+        st.markdown("#### Quick Links")
         st.markdown("""
-        **Email:** support@royalenfield.com  
-        **Toll-Free:** 1800 210 0007  
-        **Hours:** 9:00 AM - 9:00 PM (All Days)
+        - [Motorcycles](#the-motorcycles)
+        - [Dealerships](#find-a-dealership)
+        - [Book Test Ride](#experience-the-ride)
+        - [Ownership & Services](#ownership-services)
+        - [Contact & Support](#contact-us)
         """)
         
     with col3:
@@ -236,12 +221,12 @@ def render_footer():
         st.markdown("""
         [📘 Facebook](https://www.facebook.com/RoyalEnfield)  
         [📸 Instagram](https://www.instagram.com/royalenfield/)  
-        [🐦 Twitter](https://twitter.com/royalenfield)  
+        [🐦 Twitter / X](https://twitter.com/royalenfield)  
         [▶️ YouTube](https://www.youtube.com/user/RoyalEnfield)
         """)
         
     with col4:
-        st.markdown("#### Legal")
+        st.markdown("#### Legal & Compliance")
         if st.button("🔒 Privacy Policy", key="legal_privacy_btn", type="tertiary"):
             show_privacy_policy()
         if st.button("📜 Terms & Conditions", key="legal_terms_btn", type="tertiary"):
@@ -252,4 +237,5 @@ def render_footer():
             show_cookie_policy()
         
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<div style='text-align: center; color: #666; font-size: 12px;'>© 2026 Royal Enfield. This is a digital showroom prototype built with Streamlit.</div>", unsafe_allow_html=True)
+    st.markdown("<div style='text-align: center; color: #666; font-size: 12px;'>© 2026 Royal Enfield (A Unit of Eicher Motors Ltd.). All Rights Reserved.</div>", unsafe_allow_html=True)
+

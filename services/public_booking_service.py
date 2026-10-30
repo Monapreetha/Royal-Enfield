@@ -41,3 +41,32 @@ class PublicBookingService:
             
         except Exception as e:
             return False, f"An error occurred while booking: {str(e)}"
+
+    def submit_inquiry(self, name: str, email: str, phone: str, topic: str, message: str) -> tuple[bool, str]:
+        if not name or not (email or phone):
+            return False, "Please provide your Name and at least an Email address or Phone number."
+
+        try:
+            inquiry_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "customer_inquiries.csv")
+            if os.path.exists(inquiry_path):
+                df = pd.read_csv(inquiry_path)
+            else:
+                df = pd.DataFrame(columns=["InquiryID", "Name", "Email", "Phone", "Topic", "Message"])
+            
+            inq_id = f"INQ{len(df) + 1:03d}"
+            new_row = {
+                "InquiryID": inq_id,
+                "Name": name,
+                "Email": email or "N/A",
+                "Phone": phone or "N/A",
+                "Topic": topic,
+                "Message": message or "N/A"
+            }
+            df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+            os.makedirs(os.path.dirname(inquiry_path), exist_ok=True)
+            df.to_csv(inquiry_path, index=False)
+            
+            return True, f"Thank you, {name}! Your inquiry regarding '{topic}' has been registered. Reference Ticket: {inq_id}. Our team will contact you within 24 hours."
+        except Exception as e:
+            return False, f"An error occurred while submitting inquiry: {str(e)}"
+

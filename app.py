@@ -52,6 +52,8 @@ from components.hero import render_hero_section
 from components.showcase import render_showcase
 from components.locations import render_locations
 from components.booking_form import render_booking_form
+from components.services_info import render_services
+from components.contact_info import render_contact
 from components.footer import render_footer
 
 # --- Build the Page ---
@@ -60,6 +62,6 @@ render_hero_section()
 render_showcase()
 render_locations()
 render_booking_form()
+render_services()
+render_contact()
 render_footer()
-
-# Force streamlit to reload again 12
