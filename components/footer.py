@@ -160,63 +160,48 @@ def render_footer():
     st.markdown("---")
     
     # CSS styling for footer buttons and interactive legal links
-    st.markdown("""
-        <style>
-        /* Quick action centered buttons */
-        div[data-testid="stButton"] button[kind="secondary"],
-        div[data-testid="stButton"] button[kind="primary"] {
-            text-align: center !important;
-        }
-        
-        /* Sleek styling for footer tertiary links */
-        button[data-testid="baseButton-tertiary"],
-        div[data-testid="stButton"] button[kind="tertiary"] {
-            text-align: left !important;
-            justify-content: flex-start !important;
-            padding: 3px 0px !important;
-            margin: 0px !important;
-            height: auto !important;
-            min-height: unset !important;
-            color: #b0b0b0 !important;
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            border: none !important;
-            background: transparent !important;
-            box-shadow: none !important;
-            cursor: pointer;
-            transition: color 0.2s ease, transform 0.2s ease;
-        }
-        button[data-testid="baseButton-tertiary"]:hover,
-        div[data-testid="stButton"] button[kind="tertiary"]:hover {
-            color: #e53935 !important;
-            text-decoration: underline !important;
-            background: transparent !important;
-            transform: translateX(4px);
-        }
-        </style>
-    """, unsafe_allow_html=True)
+    css_html = """
+<style>
+/* Quick action centered buttons */
+div[data-testid="stButton"] button[kind="secondary"],
+div[data-testid="stButton"] button[kind="primary"] {
+    text-align: center !important;
+}
+
+/* Sleek styling for footer tertiary links */
+button[data-testid="baseButton-tertiary"],
+div[data-testid="stButton"] button[kind="tertiary"] {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    padding: 3px 0px !important;
+    margin: 0px !important;
+    height: auto !important;
+    min-height: unset !important;
+    color: #b0b0b0 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+button[data-testid="baseButton-tertiary"]:hover,
+div[data-testid="stButton"] button[kind="tertiary"]:hover {
+    color: #e53935 !important;
+    text-decoration: underline !important;
+    background: transparent !important;
+    transform: translateX(4px);
+}
+</style>
+"""
+    clean_css = "\n".join(l.strip() for l in css_html.splitlines() if l.strip())
+    st.markdown(clean_css, unsafe_allow_html=True)
 
     # --- MAIN FOOTER ---
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("#### Royal Enfield")
-        st.markdown("""
-        *Since 1901 — Made Like a Gun, Goes Like a Bullet.*  
-        The oldest motorcycle brand in continuous production, inspiring generations of riders across the globe.
-        """)
-        
-    with col2:
-        st.markdown("#### Quick Links")
-        st.markdown("""
-        - [Motorcycles](#the-motorcycles)
-        - [Dealerships](#find-a-dealership)
-        - [Book Test Ride](#experience-the-ride)
-        - [Ownership & Services](#ownership-services)
-        - [Contact & Support](#contact-us)
-        """)
-        
-    with col3:
         st.markdown("#### Follow Us")
         st.markdown("""
         [📘 Facebook](https://www.facebook.com/RoyalEnfield)  
@@ -225,7 +210,7 @@ def render_footer():
         [▶️ YouTube](https://www.youtube.com/user/RoyalEnfield)
         """)
         
-    with col4:
+    with col2:
         st.markdown("#### Legal & Compliance")
         if st.button("🔒 Privacy Policy", key="legal_privacy_btn", type="tertiary"):
             show_privacy_policy()
@@ -238,4 +223,5 @@ def render_footer():
         
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("<div style='text-align: center; color: #666; font-size: 12px;'>© 2026 Royal Enfield (A Unit of Eicher Motors Ltd.). All Rights Reserved.</div>", unsafe_allow_html=True)
+
 
