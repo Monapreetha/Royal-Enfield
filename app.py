@@ -50,6 +50,8 @@ st.markdown("""
 from components.navbar import render_navbar
 from components.hero import render_hero_section
 from components.showcase import render_showcase
+from components.rides_info import render_rides
+from components.heritage_info import render_heritage
 from components.locations import render_locations
 from components.booking_form import render_booking_form
 from components.services_info import render_services
@@ -60,8 +62,11 @@ from components.footer import render_footer
 render_navbar()
 render_hero_section()
 render_showcase()
+render_rides()
+render_heritage()
 render_locations()
 render_booking_form()
 render_services()
 render_contact()
 render_footer()
+

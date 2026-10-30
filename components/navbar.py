@@ -76,7 +76,7 @@ html {{
 .nav-menu {{
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -84,9 +84,9 @@ html {{
 .nav-link {{
     color: #c7c7c7;
     text-decoration: none !important;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     position: relative;
     padding: 6px 0;
@@ -164,6 +164,8 @@ html {{
 <div class="nav-logo" onclick="{scroll_top_js}">ROYAL ENFIELD</div>
 <ul class="nav-menu">
 <li><a href="#the-motorcycles" class="nav-link" onclick="{scroll_js('the-motorcycles')}">Motorcycles</a></li>
+<li><a href="#rides-community" class="nav-link" onclick="{scroll_js('rides-community')}">Rides</a></li>
+<li><a href="#our-heritage" class="nav-link" onclick="{scroll_js('our-heritage')}">Heritage</a></li>
 <li><a href="#find-a-dealership" class="nav-link" onclick="{scroll_js('find-a-dealership')}">Dealerships</a></li>
 <li><a href="#ownership-services" class="nav-link" onclick="{scroll_js('ownership-services')}">Services</a></li>
 <li><a href="#contact-us" class="nav-link" onclick="{scroll_js('contact-us')}">Contact</a></li>
@@ -172,6 +174,7 @@ html {{
 <a href="#experience-the-ride" class="nav-cta-btn" onclick="{scroll_js('experience-the-ride')}"><span>🏍️ Book Test Ride</span></a>
 </div>
 </div>
+
 
 """
     clean_html = "\n".join(line.strip() for line in navbar_html.splitlines() if line.strip())
