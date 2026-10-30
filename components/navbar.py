@@ -165,7 +165,6 @@ html {{
 <ul class="nav-menu">
 <li><a href="#the-motorcycles" class="nav-link" onclick="{scroll_js('the-motorcycles')}">Motorcycles</a></li>
 <li><a href="#find-a-dealership" class="nav-link" onclick="{scroll_js('find-a-dealership')}">Dealerships</a></li>
-<li><a href="#experience-the-ride" class="nav-link" onclick="{scroll_js('experience-the-ride')}">Test Ride</a></li>
 <li><a href="#ownership-services" class="nav-link" onclick="{scroll_js('ownership-services')}">Services</a></li>
 <li><a href="#contact-us" class="nav-link" onclick="{scroll_js('contact-us')}">Contact</a></li>
 </ul>
@@ -173,6 +172,7 @@ html {{
 <a href="#experience-the-ride" class="nav-cta-btn" onclick="{scroll_js('experience-the-ride')}"><span>🏍️ Book Test Ride</span></a>
 </div>
 </div>
+
 """
     clean_html = "\n".join(line.strip() for line in navbar_html.splitlines() if line.strip())
     st.markdown(clean_html, unsafe_allow_html=True)
