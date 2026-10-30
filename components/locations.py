@@ -3,7 +3,7 @@ import pandas as pd
 
 def render_locations():
     """Renders the Dealership Locations section with an interactive map."""
-    st.markdown("<h2 class='hero-text'>FIND A DEALERSHIP</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 class='hero-text' id='find-a-dealership'>FIND A DEALERSHIP</h2>", unsafe_allow_html=True)
     st.markdown("<h4 class='hero-text' style='color:#999;'>Locate your nearest authorized showroom and service center across India.</h4><br>", unsafe_allow_html=True)
     
     locations_data = {

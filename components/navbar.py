@@ -1,43 +1,172 @@
 import streamlit as st
 
 def render_navbar():
-    """Renders a custom HTML/CSS navigation bar mimicking the official website."""
+    """Renders a functional, modern fixed navigation bar with section links and action CTA."""
     
     navbar_html = """
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        [id] {
+            scroll-margin-top: 85px;
+        }
         .custom-navbar {
-            background-color: #1a1a1a;
+            background: rgba(18, 18, 18, 0.96);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            height: 70px;
+            height: 72px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 0 40px;
-            z-index: 99999;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            border-bottom: 1px solid #333;
+            z-index: 999999;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
         
-        .nav-logo {
-            color: #cc0000;
-            font-size: 26px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            font-family: 'Arial Black', Impact, sans-serif;
+        /* Logo & Brand */
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
             cursor: pointer;
         }
+        .nav-logo {
+            color: #e53935;
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            font-family: 'Arial Black', Impact, sans-serif;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .nav-logo:hover {
+            color: #ff5252;
+            transform: scale(1.02);
+        }
+        .nav-badge {
+            color: #888;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 2px 8px;
+            border: 1px solid #333;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
         
-        /* Add some padding to the main container so it's not hidden behind the fixed navbar */
+        /* Navigation Links */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-link {
+            color: #c7c7c7;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 6px 0;
+            transition: color 0.25s ease;
+        }
+        .nav-link:hover {
+            color: #ffffff;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #e53935;
+            transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Action Button */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-cta-btn {
+            background: linear-gradient(135deg, #cc0000 0%, #a80000 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 9px 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 60, 60, 0.3);
+            box-shadow: 0 4px 14px rgba(204, 0, 0, 0.4);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-cta-btn:hover {
+            background: linear-gradient(135deg, #e60000 0%, #cc0000 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 0, 0, 0.65);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Main container spacing so nothing is hidden behind fixed navbar */
         .block-container {
-            padding-top: 80px !important; 
+            padding-top: 85px !important; 
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) {
+            .nav-menu {
+                display: none;
+            }
+            .nav-badge {
+                display: none;
+            }
+            .custom-navbar {
+                padding: 0 20px;
+            }
         }
     </style>
 
     <div class="custom-navbar">
-        <div class="nav-logo">
-            ROYAL ENFIELD
+        <a href="#" class="nav-brand">
+            <span class="nav-logo">ROYAL ENFIELD</span>
+            <span class="nav-badge">SINCE 1901</span>
+        </a>
+        
+        <ul class="nav-menu">
+            <li><a href="#the-motorcycles" class="nav-link">Motorcycles</a></li>
+            <li><a href="#find-a-dealership" class="nav-link">Dealerships</a></li>
+            <li><a href="#experience-the-ride" class="nav-link">Test Ride</a></li>
+            <li><a href="#ownership-services" class="nav-link">Services</a></li>
+            <li><a href="#contact-us" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#experience-the-ride" class="nav-cta-btn">
+                <span>🏍️ Book Test Ride</span>
+            </a>
         </div>
     </div>
     """

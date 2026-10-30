@@ -197,7 +197,7 @@ def render_footer():
     """, unsafe_allow_html=True)
 
     # --- QUICK LINKS ABOVE FOOTER ---
-    st.markdown("<h3 style='text-align:center;'>QUICK ACTIONS</h3><br>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align:center;' id='ownership-services'>QUICK ACTIONS & SERVICES</h3><br>", unsafe_allow_html=True)
     q1, q2, q3 = st.columns(3)
     
     with q1:
@@ -224,7 +224,7 @@ def render_footer():
         """)
         
     with col2:
-        st.markdown("#### For Further Queries")
+        st.markdown("<h4 id='contact-us'>For Further Queries</h4>", unsafe_allow_html=True)
         st.markdown("""
         **Email:** support@royalenfield.com  
         **Toll-Free:** 1800 210 0007  

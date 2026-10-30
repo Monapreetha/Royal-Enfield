@@ -62,4 +62,4 @@ render_locations()
 render_booking_form()
 render_footer()
 
-# Force streamlit to reload again 9
+# Force streamlit to reload again 10
