@@ -61,9 +61,9 @@ from components.footer import render_footer
 # --- Build the Page ---
 render_navbar()
 render_hero_section()
+render_heritage()
 render_showcase()
 render_rides()
-render_heritage()
 render_locations()
 render_booking_form()
 render_services()

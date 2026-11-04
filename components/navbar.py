@@ -163,9 +163,9 @@ html {{
 <div class="custom-navbar">
 <div class="nav-logo" onclick="{scroll_top_js}">ROYAL ENFIELD</div>
 <ul class="nav-menu">
+<li><a href="#our-heritage" class="nav-link" onclick="{scroll_js('our-heritage')}">Heritage</a></li>
 <li><a href="#the-motorcycles" class="nav-link" onclick="{scroll_js('the-motorcycles')}">Motorcycles</a></li>
 <li><a href="#rides-community" class="nav-link" onclick="{scroll_js('rides-community')}">Rides</a></li>
-<li><a href="#our-heritage" class="nav-link" onclick="{scroll_js('our-heritage')}">Heritage</a></li>
 <li><a href="#find-a-dealership" class="nav-link" onclick="{scroll_js('find-a-dealership')}">Dealerships</a></li>
 <li><a href="#ownership-services" class="nav-link" onclick="{scroll_js('ownership-services')}">Services</a></li>
 <li><a href="#contact-us" class="nav-link" onclick="{scroll_js('contact-us')}">Contact</a></li>
