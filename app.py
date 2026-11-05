@@ -54,6 +54,7 @@ from components.rides_info import render_rides
 from components.heritage_info import render_heritage
 from components.locations import render_locations
 from components.booking_form import render_booking_form
+from components.finance_calculator import render_finance_calculator
 from components.services_info import render_services
 from components.contact_info import render_contact
 from components.footer import render_footer
@@ -65,6 +66,7 @@ render_heritage()
 render_showcase()
 render_rides()
 render_booking_form()
+render_finance_calculator()
 render_locations()
 render_services()
 render_contact()
