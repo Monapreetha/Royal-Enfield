@@ -113,21 +113,47 @@ html {{
     width: 100%;
 }}
 
-/* Action Button */
+/* Action Buttons */
 .nav-actions {{
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+}}
+.nav-sec-btn {{
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0e0e0 !important;
+    text-decoration: none !important;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}}
+.nav-sec-btn:hover {{
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.45) !important;
 }}
 .nav-cta-btn {{
     background: linear-gradient(135deg, #cc0000 0%, #a80000 100%);
     color: #ffffff !important;
     text-decoration: none !important;
-    padding: 9px 20px;
+    padding: 8px 16px;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 800;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     border: 1px solid rgba(255, 60, 60, 0.3) !important;
     box-shadow: 0 4px 14px rgba(204, 0, 0, 0.4);
@@ -136,6 +162,7 @@ html {{
     align-items: center;
     gap: 6px;
     cursor: pointer;
+    white-space: nowrap;
 }}
 .nav-cta-btn:hover {{
     background: linear-gradient(135deg, #e60000 0%, #cc0000 100%);
@@ -150,12 +177,17 @@ html {{
 }}
 
 /* Responsive */
-@media (max-width: 960px) {{
+@media (max-width: 1040px) {{
     .nav-menu {{
         display: none;
     }}
     .custom-navbar {{
         padding: 0 20px;
+    }}
+}}
+@media (max-width: 600px) {{
+    .nav-sec-btn {{
+        display: none;
     }}
 }}
 </style>
@@ -171,6 +203,7 @@ html {{
 <li><a href="#contact-us" class="nav-link" onclick="{scroll_js('contact-us')}">Contact</a></li>
 </ul>
 <div class="nav-actions">
+<a href="#calculate-finance" class="nav-sec-btn" onclick="{scroll_js('calculate-finance')}"><span>💰 Calculate Finance</span></a>
 <a href="#experience-the-ride" class="nav-cta-btn" onclick="{scroll_js('experience-the-ride')}"><span>🏍️ Book Test Ride</span></a>
 </div>
 </div>
